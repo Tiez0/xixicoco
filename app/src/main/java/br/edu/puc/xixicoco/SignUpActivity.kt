@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -37,8 +38,8 @@ class SignUpActivity : ComponentActivity() {
 }
 
 @Composable
-fun SimpleOutlinedTextFieldSample() {
-    var NOME by remember { mutableStateOf("0") }
+fun Tnome() {
+    var NOME by remember { mutableStateOf(" ") }
 
     OutlinedTextField(
         value = NOME,
@@ -50,13 +51,56 @@ fun SimpleOutlinedTextFieldSample() {
 // comentario de teste
 @Composable
 fun Temail() {
-    var EMAIL by remember { mutableStateOf("0") }
+    var EMAIL by remember { mutableStateOf(" ") }
 
     OutlinedTextField(
         value = EMAIL,
         onValueChange = { EMAIL = it },
-        label = { Text("CPF") }
+        label = { Text("EMAIL") }
     )
+}
+
+@Composable
+fun Tsenha() {
+    var SENHA by remember {  mutableStateOf(" ") }
+
+    OutlinedTextField(
+        value = SENHA,
+        onValueChange = { SENHA = it },
+        label = { Text("SENHA") }
+
+    )
+}
+
+@Composable
+fun Trg() {
+    var RG by remember {  mutableStateOf(" ") }
+
+    OutlinedTextField(
+        value = RG,
+        onValueChange = { RG = it },
+        label = { Text("RG") }
+
+    )
+}
+
+@Composable
+fun Tcpf() {
+    var CPF by remember {  mutableStateOf(" ") }
+
+    OutlinedTextField(
+        value = CPF,
+        onValueChange = { CPF = it },
+        label = { Text("cpf") }
+
+    )
+}
+
+@Composable
+fun botaocriarconta(onClick: () -> Unit) {
+    FilledTonalButton(onClick = onClick) {
+        Text("CRIAR CONTA")
+    }
 }
 
 
@@ -67,7 +111,7 @@ fun Temail() {
 @Composable
 fun TextFieldPreview() {
     XixicocoTheme {
-        SimpleOutlinedTextFieldSample()
+        Tnome()
     }
 }
 @Preview(showBackground = true)
@@ -77,3 +121,41 @@ fun TextFieldPreview2() {
         Temail()
     }
 }
+@Preview (showBackground = true)
+@Composable
+fun TextFieldPreview3(){
+    XixicocoTheme {
+        Tsenha()
+    }
+}
+
+@Preview (showBackground = true)
+@Composable
+fun TextFieldPreview4(){
+    XixicocoTheme {
+        Trg()
+    }
+}
+
+@Preview (showBackground = true)
+@Composable
+fun TextFieldPreview5(){
+    XixicocoTheme {
+        Tcpf()
+    }
+}
+
+@Preview (showBackground = true)
+@Composable
+fun ButtonFieldPreview6(){
+    XixicocoTheme {
+        botaocriarconta() {  }
+    }
+}
+
+
+
+
+
+
+

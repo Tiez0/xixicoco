@@ -4,10 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,7 +20,7 @@ class WelcomeActivity : ComponentActivity() {
         setContent {
             XixicocoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    Greeting4(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -33,40 +31,17 @@ class WelcomeActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        Text(
-            text = "Bem-vindo ao programa experimental Firebase",
-            modifier = modifier
-        )
-
-        botaologin {
-            println("Botão de login clicado")
-
-        }
-        botaosignup {
-            println("Botão de singup clicado")
-        }
-    }
+fun Greeting4(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
 }
-@Composable
-fun botaologin(onClick: () -> Unit) {
-    FilledTonalButton(onClick = onClick) {
-        Text("Login")
-    }
-}
-@Composable
-fun botaosignup(onClick: () -> Unit) {
-    FilledTonalButton(onClick = onClick) {
-        Text("Singup")
-    }
-}
-
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview4() {
     XixicocoTheme {
-        Greeting("Android")
+        Greeting4("Android")
     }
 }
